@@ -13,8 +13,8 @@ $(function() {
 
     sparkline("#overall-shipped", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
     sparkline("#overall-received", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
-    sparkline("#overall-conship", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
-    sparkline("#overall-conrec", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
+    sparkline("#overall-picked", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
+    // sparkline("#overall-conrec", "area", 30, 50, "basis", 750, 2000, "rgba(255,255,255,0.5)");
     
 });
 

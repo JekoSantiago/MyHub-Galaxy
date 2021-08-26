@@ -23,24 +23,24 @@
             <tr>
                 <th>Delivery Note</th>
                 <th>Shipped Date</th>
-                <th class="text-right">Containers Shipped</th>
-                <th class="text-right">Containers Received</th>
+                <th class="text-center">Containers Shipped</th>
+                <th class="text-center">Containers Received</th>
 		        <th>Received Date</th>
 		        <th>Remarks</th>
-                <th class="text-right">Receiving  Progress</th>
+                <th class="text-center">Receiving  Progress</th>
             </tr>
         </thead>
         <tbody>
             <?php 
             foreach($deliver as $d) :
             ?>
-                <td><a data-toggle='modal' data-target='#modal_details_report' data-rowid='<?= $d->Deliver_ID; ?>' data-popup='tooltip' title='View' data-placement='right'><?= $d->ControlNo; ?></a></td>
+                <td><a data-toggle='modal' data-target='#modal_details_report' data-rowid='<?= $d->Deliver_ID; ?>' data-popup='tooltip' title='View' data-placement='center'><?= $d->ControlNo; ?></a></td>
                 <td><?= $d->ShippedDate; ?></td>
-                <td class="text-right"><?= number_format($d->ConShip); ?></td>
-                <td class="text-right"><?= number_format($d->ConRec); ?></td>
+                <td class="text-center"><?= number_format($d->ConShip); ?></td>
+                <td class="text-center"><?= number_format($d->ConRec); ?></td>
 		        <td><?= $d->ReceivedDate; ?></td>
 		        <td><?= $d->Remarks; ?></td>
-                <td class="text-right">
+                <td class="text-center">
                 <?php if (($d->ConRec) !== 0) {
                     echo round($d->ConRec / $d->ConShip * 100);
                 } else {

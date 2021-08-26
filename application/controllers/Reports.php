@@ -296,34 +296,34 @@ class Reports extends CI_Controller
             if ($this->posID == 2) :
 
                 $data['oa'] = $this->m_reports->overallAMReportCount(0, $this->empID, $dateFrom, $dateTo);
-
+                $data['pickvw'] = 0;
                 $this->load->view('tpl/reports/tables/overall', $data);
             elseif ($this->posID == 3) :
 
                 $data['oa'] = $this->m_reports->overallACReportCount($this->empID, $dateFrom, $dateTo);
-
+                $data['pickvw'] = 0;
                 $this->load->view('tpl/reports/tables/overall', $data);
             elseif ($this->posID == 4) :
 
                 $data['oa'] = $this->m_reports->overallStoreReportCount($this->empID, $dateFrom, $dateTo);
-
+                $data['pickvw'] = 0;
                 $this->load->view('tpl/reports/tables/overall', $data);
             elseif ($this->posID == 5) :
 
                 $data['oa'] = $this->m_reports->overallDeliverReportCount($this->locID, $dateFrom, $dateTo);
-
+                $data['pickvw'] = 0;
                 $this->load->view('tpl/reports/tables/overall', $data);
             else :
                 
                 $data['oa'] = $this->m_reports->overallBranchReportCount($dateFrom, $dateTo);
-
+                $data['pickvw'] = 1;
                 $this->load->view('tpl/reports/tables/overall', $data);
             endif;
         else :
             if ($this->posID <= 2 || $this->empID == IC_USER || $this->deptID == IT_DEPT_ID):
             
                 $data['oa'] = $this->m_reports->overallBranchReportCount($dateFrom, $dateTo);
-
+                $data['pickvw'] = 1;
                 $this->load->view('tpl/reports/tables/overall', $data);
             endif;
         endif;
