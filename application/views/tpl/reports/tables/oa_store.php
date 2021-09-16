@@ -43,7 +43,7 @@
             <tr>
                 <td style="border-right: 1px solid #cdd0d4;"><a href="#" id="loc_<?= $s->Location_ID; ?>" onclick="getDeliverTable(<?= $s->Location_ID; ?>, this.id); return false;">[<?= $s->LocationCode; ?>] <?= $s->Location; ?></a></td>
                 <td class="text-center"><?= ($s->TotalShipped == 0) ? '-' : number_format($s->TotalShipped); ?></td>
-                <td class="text-center"><?= ($s->TotalReceived == 0) ? '-' : number_format($s->TotalReceived); ?></td>
+                <td class="text-center"><?= ($s->TotalShipped == 0) ? '-' : number_format($s->TotalReceived); ?></td>
                 <td class="text-center" style="border-right: 1px solid #cdd0d4;">
                 <?php if (($s->TotalReceived) !== 0) {
                     echo round($s->TotalReceived / $s->TotalShipped * 100) . '%';
@@ -54,7 +54,7 @@
                 ?>
                 </td>
                 <td class="text-center"><?= ($s->ConShip == 0) ? '-' : number_format($s->ConShip); ?></td>
-                <td class="text-center"><?= ($s->ConRec == 0) ? '-' : number_format($s->ConRec); ?></td>
+                <td class="text-center"><?= ($s->ConShip == 0) ? '-' : number_format($s->ConRec); ?></td>
                 <td class="text-center">
                 <?php if (($s->ConRec) !== 0) {
                     echo round($s->ConRec / $s->ConShip * 100) . '%';

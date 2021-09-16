@@ -26,7 +26,7 @@
             <tr>
                 <td style="border-right: 1px solid #cdd0d4;"><a href="#" id="am_<?= $a->AM_ID; ?>" onclick="getACTable(<?= $a->AM_ID; ?>, this.id); return false;"><?= $a->AM; ?></a></td>
                 <td class="text-center"><?= ($a->TotalShipped == 0) ? '-' : number_format($a->TotalShipped) ; ?></td>
-                <td class="text-center"><?= ($a->TotalReceived == 0) ? '-': number_format($a->TotalReceived);  ?></td>
+                <td class="text-center"><?= ($a->TotalShipped == 0) ? '-': number_format($a->TotalReceived);  ?></td>
                 <td class="text-center" style="border-right: 1px solid #cdd0d4;">
                 <?php if (($a->TotalReceived) !== 0) {
                     echo round($a->TotalReceived / $a->TotalShipped * 100) . '%';
@@ -37,7 +37,7 @@
                 ?>
                 </td>
                 <td class="text-center"><?= ($a->ConShip == 0) ? '-' : number_format($a->ConShip); ?></td>
-                <td class="text-center"><?= ($a->ConRec == 0) ? '-' : number_format($a->ConRec); ?></td>
+                <td class="text-center"><?= ($a->ConShip == 0) ? '-' : number_format($a->ConRec); ?></td>
                 <td class="text-center">
                 <?php if (($a->ConRec) !== 0) {
                     echo round($a->ConRec / $a->ConShip * 100) . '%';
